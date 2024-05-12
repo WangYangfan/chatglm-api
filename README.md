@@ -1,6 +1,6 @@
 # chatglm-api
 
-Hangup chatglm-6b, chatglm2-6b, chatglm3-6b API and calling in python scripts.
+Hang chatglm-6b, chatglm2-6b, chatglm3-6b API and calling in python scripts.
 
 **Requirements**
 ```

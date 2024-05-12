@@ -5,6 +5,7 @@ api deployment of chatglm-6b, chatglm2-6b, chatglm3-6b
 ```
 transformers==4.40.2
 accelerate==0.30.0
+torch==2.3.0
 fastapi
 argparse
 loguru

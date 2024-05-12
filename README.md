@@ -39,7 +39,7 @@ CUDA_VISIBLE_DEVICES=3 python api.py --model_name THUDM/chatglm3-6b --port 8002
 
 the script `api.sh` is suitable to all of `chatglm-6b, chatglm2-6b, chatglm3-6b`.
 
-**Calling**
+## Calling
 
 ```python
 input = {

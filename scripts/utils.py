@@ -22,7 +22,7 @@ def torch_gc(device):
             torch.cuda.empty_cache()
             torch.cuda.ipc_collect()
 
-def gen_response(query, history=[], max_length=None, top_p=None, temperature=None):
+def gen_response(query, history=[], max_length=None, top_p=None, temperature=None, port=None):
     """
     调用模型chat方法，输出模型回答和历史对话信息
 
@@ -43,7 +43,7 @@ def gen_response(query, history=[], max_length=None, top_p=None, temperature=Non
     :return new_response, new_history: 模型回答和历史信息
     """
 
-    url = "http://localhost:8000"
+    url = "http://localhost:" + str(port)
     payload = json.dumps({
         "query": query, 
         "history": history, 
@@ -68,7 +68,8 @@ if __name__ == '__main__':
     input = {
         'query': "123 + 123 + 123 + 123 = ？",
         # 'history': [['123 * 4 = ?', '123 * 4 = 496']],  # if chatglm-6b or chatglm2-6b
-        # 'history': [{'role': 'user', 'content': '123 * 4 = ?'}, {'role': 'assistant', 'metadata': '', 'content': '123 * 4 = 496'}]  # if chatglm3-6b
+        # 'history': [{'role': 'user', 'content': '123 * 4 = ?'}, {'role': 'assistant', 'metadata': '', 'content': '123 * 4 = 496'}], # if chatglm3-6b
+        'port': 8000,   # or 8001, 8002
     }
     request, history = gen_response(**input)
     print(request, history)

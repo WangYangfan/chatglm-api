@@ -1,6 +1,6 @@
 # chatglm-api
 
-api deployment of  `chatglm-6b, chatglm2-6b, chatglm3-6b` and calling by python scripts.
+🐥 api deployment of  `chatglm-6b, chatglm2-6b, chatglm3-6b` and calling by python scripts.
 
 **Requirements**
 ```
@@ -52,5 +52,5 @@ request, history = gen_response(**input)
 print(request, history)
 ```
 
-**Attention: `chatglm-6b, chatglm2-6b` and `chatglm3-6b` have different `history` forms when called.**
+**🚨 Attention: `chatglm-6b, chatglm2-6b` and `chatglm3-6b` have different `history` forms when called.**
 

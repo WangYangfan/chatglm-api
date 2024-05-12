@@ -63,8 +63,9 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', type=str, default=None)
+    parser.add_argument('--port', type=int, default=None)
     args = parser.parse_args()
-    logger.info("🧩 model name: {}".format(args.model_name))
+    logger.info("🧩 model name: {}, port: {}".format(args.model_name, args.port))
 
     tokenizer = AutoTokenizer.from_pretrained(local_models + args.model_name, trust_remote_code=True)
     model = AutoModel.from_pretrained(local_models + args.model_name, trust_remote_code=True).float()
@@ -72,6 +73,6 @@ if __name__ == '__main__':
     model = accelerater.prepare(model)
 
     model.eval()
-    uvicorn.run(app, host='localhost', port=8000, workers=1)
+    uvicorn.run(app, host='localhost', port=args.port, workers=1)
     
 

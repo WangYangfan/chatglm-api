@@ -1,6 +1,6 @@
 # chatglm-api
 
-Hang chatglm-6b, chatglm2-6b, chatglm3-6b API and calling in python scripts.
+api deployment of  `chatglm-6b, chatglm2-6b, chatglm3-6b` and calling by python scripts.
 
 **Requirements**
 ```
@@ -13,9 +13,11 @@ loguru
 dotenv
 ```
 
-**Setup**
+## Setup
 
 Before run scripts, need setup env: in `envs/api.env`, `LOCAL_MODELS` should be local root path of models. If using remote models, just keep `LOCAL_MODELS=""`.
+
+## Hang Models
 
 **Hang one model**
 
@@ -23,7 +25,7 @@ Before run scripts, need setup env: in `envs/api.env`, `LOCAL_MODELS` should be 
 CUDA_VISIBLE_DEVICES=1 python api.py --model_name THUDM/chatglm-6b --port 8000
 ```
 
-which means that a model named `THUDM/chatglm-6b` is hung on the `cuda:1`, and the port number is `8000`
+which means that a model named `THUDM/chatglm-6b` is hung on `cuda:1` with port `8000`.
 
 **Hang multi model**
 
@@ -50,5 +52,5 @@ request, history = gen_response(**input)
 print(request, history)
 ```
 
-**Attention: `chatglm-6b, chatglm2-6b` and `chatglm3-6b` have different history forms when called.**
+**Attention: `chatglm-6b, chatglm2-6b` and `chatglm3-6b` have different `history` forms when called.**
 

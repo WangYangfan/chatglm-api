@@ -53,7 +53,7 @@ async def create_item(request: Request):
 
 
 if __name__ == '__main__':
-    load_dotenv(dotenv_path="../envs/api.env", verbose=True, override=True)
+    load_dotenv(dotenv_path="../envs/hangup.env", verbose=True, override=True)
     local_models = os.getenv('LOCAL_MDOELS')
 
     seed_environment(seed=42)

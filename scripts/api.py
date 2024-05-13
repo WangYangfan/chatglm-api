@@ -67,7 +67,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     logger.info("🧩 model name: {}, port: {}".format(args.model_name, args.port))
 
-    tokenizer = AutoTokenizer.from_pretrained(local_models + args.model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(os.path.join(local_models, args.model_name), trust_remote_code=True)
     model = AutoModel.from_pretrained(local_models + args.model_name, trust_remote_code=True).float()
 
     model = accelerater.prepare(model)

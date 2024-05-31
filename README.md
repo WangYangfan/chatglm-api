@@ -4,9 +4,10 @@
 
 **Requirements**
 ```
+python==3.9.19
+torch==2.3.0
 transformers==4.40.2
 accelerate==0.30.0
-torch==2.3.0
 fastapi
 argparse
 loguru

@@ -11,7 +11,7 @@ accelerate==0.30.0
 fastapi
 argparse
 loguru
-dotenv
+python-dotenv
 ```
 
 ## Setup
